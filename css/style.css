@@ -581,8 +581,8 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(37, 99, 235, 0.9);
-    display: flex;
+    background-color:rgba(102, 104, 235, 0.373);
+    display: flex;      
     justify-content: center;
     align-items: center;
     gap: 1rem;
