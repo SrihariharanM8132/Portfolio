@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initSkillsAnimation();
     initContactForm();
     initScrollEffects();
+    initTypedText();
     initHeroAnimation();
 });
 
@@ -147,66 +148,54 @@ function initSkillsAnimation() {
 // ==================== CONTACT FORM HANDLING ====================
 function initContactForm() {
     const form = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
+        const nameEl    = document.getElementById('contact-name');
+        const emailEl   = document.getElementById('contact-email');
+        const messageEl = document.getElementById('contact-message');
+        const successEl = document.getElementById('formSuccess');
 
-        if (validateForm(formData)) {
-            submitForm(formData, formMessage, form);
-        } else {
-            showFormMessage(formMessage, 'Please fill in all fields correctly.', 'error');
+        const nameErr    = document.getElementById('nameError');
+        const emailErr   = document.getElementById('emailError');
+        const msgErr     = document.getElementById('messageError');
+
+        // Clear previous errors
+        [nameErr, emailErr, msgErr].forEach(el => { if (el) el.textContent = ''; });
+
+        let valid = true;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!nameEl.value.trim()) {
+            if (nameErr) nameErr.textContent = 'Name is required.';
+            valid = false;
         }
+        if (!emailEl.value.trim() || !emailRegex.test(emailEl.value.trim())) {
+            if (emailErr) emailErr.textContent = 'A valid email address is required.';
+            valid = false;
+        }
+        if (!messageEl.value.trim()) {
+            if (msgErr) msgErr.textContent = 'Message cannot be empty.';
+            valid = false;
+        }
+
+        if (!valid) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalHTML = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending… <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            if (successEl) { successEl.style.display = 'block'; }
+            form.reset();
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.disabled = false;
+            setTimeout(() => { if (successEl) successEl.style.display = 'none'; }, 5000);
+        }, 1200);
     });
-}
-
-function validateForm(data) {
-    if (!data.name || !data.email || !data.subject || !data.message) {
-        return false;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        return false;
-    }
-
-    return true;
-}
-
-function submitForm(data, messageElement, form) {
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    setTimeout(() => {
-        console.log('Form Data:', data);
-
-        showFormMessage(messageElement, 'Message sent successfully! I\'ll get back to you soon.', 'success');
-
-        form.reset();
-
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
-}
-
-function showFormMessage(element, message, type) {
-    element.textContent = message;
-    element.className = `form-message ${type}`;
-
-    setTimeout(() => {
-        element.className = 'form-message';
-    }, 5000);
 }
 
 // ==================== SCROLL EFFECTS ====================
@@ -242,6 +231,50 @@ function initScrollEffects() {
         element.style.opacity = '0';
         scrollObserver.observe(element);
     });
+}
+
+// ==================== TYPED TEXT ANIMATION ====================
+function initTypedText() {
+    const typedEl = document.getElementById('typedText');
+    if (!typedEl) return;
+
+    const roles = [
+        'Frontend Developer',
+        'UI/UX Enthusiast',
+        'Web Designer',
+        'JavaScript Learner',
+        'Problem Solver'
+    ];
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentRole = roles[roleIndex];
+        if (isDeleting) {
+            typedEl.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedEl.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let delay = isDeleting ? 60 : 110;
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            delay = 1800;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            delay = 400;
+        }
+
+        setTimeout(type, delay);
+    }
+
+    type();
 }
 
 // ==================== HERO ANIMATION ====================
