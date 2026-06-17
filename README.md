@@ -1,82 +1,116 @@
-# Portfolio Website
+# 🌐 Srihariharan M — Personal Portfolio Website
 
-This is my personal portfolio site where I showcase my work and skills as a web developer.
+A responsive, modern personal portfolio built with pure **HTML5**, **CSS3**, and **Vanilla JavaScript** — no frameworks, no build tools required.
 
-## What's Inside
-
-The site is pretty straightforward - just HTML, CSS, and vanilla JavaScript. No frameworks needed for something this size.
-
-**Main sections:**
-- Home with a typing animation effect
-- About section with info about me
-- Technologies I work with (visual grid of tech logos)
-- Skills breakdown with progress bars
-- Projects showcase
-- Contact form
-
-## Tech Stack
-
-- HTML5
-- CSS3 (with custom properties for theming)
-- JavaScript (vanilla)
-- Font Awesome for icons
-- Devicons for technology logos
-
-## Running Locally
-
-Just open `index.html` in your browser. That's it. No build process, no npm packages to install.
-
-If you want to use a local server (which is better for testing):
-```bash
-# If you have Python installed
-python -m http.server 8000
-
-# Or use any other local server you prefer
-```
-
-Then visit `http://localhost:8000`
-
-## Project Structure
-
-```
-portfolio-website/
-├── css/
-│   └── style.css          # All the styling
-├── js/
-│   └── script.js          # Interactive features
-├── images/
-│   └── ...                # Project screenshots and profile pic
-├── index.html             # Main page
-└── package.json           # Just for reference
-```
-
-## Features
-
-- Responsive design that works on mobile, tablet, and desktop
-- Smooth scrolling navigation
-- Typing animation on the hero section
-- Animated skill progress bars
-- Mobile-friendly hamburger menu
-- Contact form (currently frontend only - you'd need to add backend for actual submission)
-
-## Customizing
-
-If you're using this as a template:
-
-1. Replace the content in `index.html` with your own info
-2. Swap out the images in the `images/` folder
-3. Update the color scheme in `style.css` (look for CSS custom properties at the top)
-4. Modify skill percentages to match your actual skills
-5. Add your real project details
-
-## Contact
-
-Feel free to reach out if you have questions or want to connect.
-
-- Email: sriharim.dev@gmail.com
-- LinkedIn: [Srihariharan M](https://linkedin.com/in/srihariharan-m-5a4287377/)
-- GitHub: [SrihariharanM8132](https://github.com/SrihariharanM8132/)
+🔗 **Live Site:** [View Portfolio](https://portfolio-srihariharanm8132.vercel.app) &nbsp;|&nbsp; 📧 **Contact:** sriharim.dev@gmail.com
 
 ---
 
-Built with HTML, CSS, and JavaScript | © 2025 Srihariharan M
+## ✨ Features
+
+| Feature | Details |
+|---|---|
+| **Typewriter Animation** | Hero section cycles through role titles with a smooth typewriter effect |
+| **Particle Background** | Animated floating particles with connection lines in the hero |
+| **Animated Skill Bars** | Progress bars animate into view when scrolled into the viewport |
+| **Technology Grid** | Visual icon grid with hover animations for each tech stack item |
+| **Project Showcase** | Cards with hover overlay showing Live Demo / GitHub links |
+| **Contact Form** | Validated contact form with inline field-level error messages |
+| **Responsive Design** | Fully mobile-friendly with a hamburger navigation menu |
+| **Smooth Scrolling** | Navbar links smoothly scroll to each section |
+| **Active Nav Highlight** | Navbar link highlights based on the current scroll position |
+| **Glassmorphism UI** | Frosted-glass cards and premium gradient design system |
+
+---
+
+## 🗂️ Project Structure
+
+```
+portfolio-website/
+├── index.html          ← Full page layout and all sections
+├── css/
+│   └── style.css       ← Design system, animations, responsive styles
+├── js/
+│   └── script.js       ← All interactive features and animations
+├── images/
+│   └── profile.jpg     ← Profile photo
+├── package.json        ← Dev dependency (live-server)
+└── .gitignore
+```
+
+---
+
+## 🚀 Running Locally
+
+### Option 1 — Open directly (simplest)
+Just double-click `index.html` — no setup needed.
+
+### Option 2 — Live dev server (recommended, auto-reloads on save)
+
+```bash
+# Install dependencies (first time only)
+npm install
+
+# Start the dev server
+npm start
+```
+
+Then open **http://localhost:3000** in your browser.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Structure | HTML5 |
+| Styling | Vanilla CSS3 (custom properties, flexbox, grid, animations) |
+| Logic | Vanilla JavaScript (ES6+) |
+| Icons | [Font Awesome 6](https://fontawesome.com/) |
+| Tech Logos | [Devicons](https://devicon.dev/) via jsDelivr CDN |
+| Font | [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts |
+| Dev Server | [live-server](https://www.npmjs.com/package/live-server) |
+
+---
+
+## 📋 Sections
+
+- **Home** — Hero with typewriter animation and particle background
+- **About** — Personal info, education, and location
+- **Technologies** — Visual grid of tools and languages
+- **Skills** — Animated progress bars by category
+- **Projects** — Project cards with live demo and GitHub links
+- **Contact** — Validated contact form + social links
+
+---
+
+## 📦 Projects Showcased
+
+### 🖥️ Personal Portfolio Website
+> This site itself — responsive portfolio built with HTML, CSS, and JavaScript.
+- Tags: `HTML5` `CSS3` `JavaScript`
+
+### 🎮 Tic Tac Toe Game
+> Feature-rich browser game with 2/3 player modes, Minimax AI hard mode, live scoreboard, animated win strikes, and glassmorphism UI.
+- 🔗 [Live Demo](https://tictactoe2-kohl.vercel.app/)
+- Tags: `HTML5` `CSS3` `JavaScript` `Minimax AI`
+
+---
+
+## 📬 Contact
+
+| Platform | Link |
+|---|---|
+| Email | [sriharim.dev@gmail.com](mailto:sriharim.dev@gmail.com) |
+| LinkedIn | [Srihariharan M](https://linkedin.com/in/srihariharan-m-5a4287377/) |
+| GitHub | [SrihariharanM8132](https://github.com/SrihariharanM8132/) |
+
+---
+
+## 📄 License
+
+This project is open source and free to use for learning and personal projects.
+
+---
+
+<p align="center">Built with HTML, CSS & JavaScript &nbsp;|&nbsp; © 2025 Srihariharan M</p>
