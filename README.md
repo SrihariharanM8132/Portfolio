@@ -2,7 +2,7 @@
 
 A responsive, modern personal portfolio built with pure **HTML5**, **CSS3**, and **Vanilla JavaScript** — no frameworks, no build tools required.
 
-🔗 **Live Site:** [View Portfolio](https://portfolio-srihariharanm8132.vercel.app) &nbsp;|&nbsp; 📧 **Contact:** sriharim.dev@gmail.com
+🔗 **Live Site:** [View Portfolio](https://portfolio-smoky-beta-45.vercel.app/) &nbsp;|&nbsp; 📧 **Contact:** sriharim.dev@gmail.com
 
 ---
 
@@ -88,6 +88,7 @@ Then open **http://localhost:3000** in your browser.
 
 ### 🖥️ Personal Portfolio Website
 > This site itself — responsive portfolio built with HTML, CSS, and JavaScript.
+- 🔗 [Live Demo](https://portfolio-smoky-beta-45.vercel.app/)
 - Tags: `HTML5` `CSS3` `JavaScript`
 
 ### 🎮 Tic Tac Toe Game
