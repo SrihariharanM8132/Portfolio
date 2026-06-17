@@ -95,7 +95,11 @@ Then open **http://localhost:3000** in your browser.
 > Feature-rich browser game with 2/3 player modes, Minimax AI hard mode, live scoreboard, animated win strikes, and glassmorphism UI.
 - 🔗 [Live Demo](https://tictactoe2-kohl.vercel.app/)
 - Tags: `HTML5` `CSS3` `JavaScript` `Minimax AI`
-
+### 🛒 BuyandBliss — E-Commerce Store
+> Full‑stack e‑commerce platform with product browsing, cart sidebar, Vite + Node.js + Express.
+![BuyandBliss Demo](file:///C:/Users/Sriha/.gemini/antigravity-ide/brain/5f8a1f6e-bfe3-4f4f-8eb3-7bde16b13315/ecommerce_demo_gif_1781694452512.png)
+- 🔗 [Live Demo](https://ecommerece-website-rose.vercel.app/)
+- Tags: `HTML5` `CSS3` `JavaScript` `Node.js` `Express` `Vite`
 ---
 
 ## 📬 Contact
